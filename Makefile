@@ -1,4 +1,4 @@
-REGISTRY ?= rencinrig/netronome
+REGISTRY ?= rencinrig/netronome-device-plugin-vfio 
 
 PLUGINS = $(sort \
 		  $(subst /,-,\

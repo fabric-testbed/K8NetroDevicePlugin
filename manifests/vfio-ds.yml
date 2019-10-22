@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    name: netronome-device-plugin-vfio
+  name: device-plugin-vfio
+spec:
+  selector:
+    matchLabels:
+      name: netronome-device-plugin-vfio
+  template:
+    metadata:
+      labels:
+        name: netronome-device-plugin-vfio
+    spec:
+      containers:
+      - name: netronome-device-plugin-vfio
+        image: rencinrig/netronome-device-plugin-vfio
+        args: ["-v", "3", "-logtostderr"]
+        securityContext:
+          privileged: true
+        volumeMounts:
+          - name: device-plugin
+            mountPath: /var/lib/kubelet/device-plugins
+      volumes:
+        - name: device-plugin
+          hostPath:
+            path: /var/lib/kubelet/device-plugins

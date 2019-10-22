@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	resourceNamespace = "devices.kubevirt.io"
+	resourceNamespace = "devices.netronome.io"
 )
 
 type DeviceStruct struct {

@@ -2,9 +2,9 @@ version: '3.6'
 
 services:
     vfiotest:
-        container_name: vfio
-        hostname: vfio 
-        image: kthare10/vfio:latest
+        container_name: netronome-device-plugin-vfio 
+        hostname: netronome-device-plugin-vfio 
+        image: rencinrig/netronome-device-plugin-vfio:latest
         restart: always
         privileged: true
         cap_add:

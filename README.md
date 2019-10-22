@@ -6,9 +6,7 @@ This software is a kubernetes [device plugin](https://kubernetes.io/docs/concept
 
 This Device Plugin is based on Kubevirt Device Plugin Manager mentioned on Kubernetees.io. See Device Plugin Manager documentaion on https://godoc.org/github.com/kubevirt/device-plugin-manager/pkg/dpm
 
-
 ## Building
-
 ```
 make build
 ```

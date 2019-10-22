@@ -71,6 +71,8 @@ Pod device assignment is derived from device plugin requirements. Snippet above 
 
 ## Issues
 
+NOTE: IOMMU grouping was not observed for Netronome cards and hence would not be an issue. But the following could be a problem for other PCI cards.
+
 ### IOMMU
 
 Currently, IOMMU groups are not enforced at the plugin's level in reporting capabilities. When allocating a device from group that contains other devices, all devices are unbound from their respective drivers but not assigned or reported as unhealthy. This has an unfortunate consequence, best demonstrated by example:

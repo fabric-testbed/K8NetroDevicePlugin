@@ -16,7 +16,7 @@ go build .
 ### Docker
 
 ```bash
-docker build -t netronome-device-plugin-vfio:latest .
+docker build -t rencinrig/netronome-device-plugin-vfio:latest .
 ```
 
 ## Running

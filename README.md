@@ -6,8 +6,6 @@ This software is a kubernetes [device plugin](https://kubernetes.io/docs/concept
 
 ## Building
 
-NOTE: This process is not finalized yet.
-
 ### Plain binary
 
 ```bash
@@ -25,21 +23,16 @@ docker build -t vfio:latest .
 
 NOTE: This process is not finalized yet.
 
-### Locally
-```bash
-cd cmd/vfio
-sudo ./vfio -v 3 -logtostderr
-```
-
-### Docker
-```
-docker run -it -v /dev:/dev -v /sys:/sys -v /lib/modules:/lib/modules -v /var/lib/kubelet/device-plugins:/var/lib/kubelet/device-plugins --privileged --cap-add=ALL vfio:latest /bin/bash
-(in docker image) ./vfio -v 3 -logtostderr
-```
-
 ## As a DaemonSet
 
-NOTE: This process is not finalized yet.
+```
+# Deploy the device plugin
+kubectl apply -f manifests/vfio-ds.yml
+
+# Optionally you can now test it using an example consumer
+kubectl apply -f examples/vfio-consumer.yml
+kubectl exec -it vfio-consumer -- ls /dev/vfio
+```
 
 ## API
 
@@ -48,11 +41,11 @@ Node description:
 ```yaml
 Capacity:
  ...
- devices.netronome.io/10b5_8747:  3
- devices.netronome.io/10de_0fbc:  1
- devices.netronome.io/10de_13ba:  1
- devices.netronome.io/10de_13f2:  2
- devices.netronome.io/10de_1bb3:  1
+ devices.netronome.io/19ee_4000:  3
+ devices.netronome.io/19ee_4000:  1
+ devices.netronome.io/19ee_4000:  1
+ devices.netronome.io/19ee_4000:  2
+ devices.netronome.io/19ee_4000:  1
  ...
 ```
 
@@ -67,9 +60,9 @@ spec:
     ...
     resources:
       requests:
-              devices.netronome.io/10de_1bb3: 1
+              devices.netronome.io/19ee_4000: 1
       limits:
-              devices.netronome.io/10de_1bb3: 1
+              devices.netronome.io/19ee_4000: 1
 ```
 
 Pod device assignment is derived from device plugin requirements. Snippet above would make sure that

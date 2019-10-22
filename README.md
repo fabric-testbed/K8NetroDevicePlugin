@@ -1,4 +1,4 @@
-# linux-vfio-k8s-dpi
+# linux-netronome-vfio-k8s-dpi
 
 ## Introduction
 
@@ -16,7 +16,7 @@ go build .
 ### Docker
 
 ```bash
-docker build -t vfio:latest .
+docker build -t netronome-device-plugin-vfio:latest .
 ```
 
 ## Running

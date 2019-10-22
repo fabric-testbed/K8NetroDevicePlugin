@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+    vfiotest:
+        container_name: netronome-device-plugin-vfio 
+        hostname: netronome-device-plugin-vfio 
+        image: rencinrig/netronome-device-plugin-vfio:latest
+        restart: always
+        privileged: true
+        cap_add:
+            - ALL
+        # point to user specific keys below
+        volumes:
+        - /dev:/dev 
+        - /sys:/sys 
+        - /lib/modules:/lib/modules 
+        - /var/lib/kubelet/device-plugins:/var/lib/kubelet/device-plugins

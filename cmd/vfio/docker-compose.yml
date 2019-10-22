@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+    vfiotest:
+        container_name: vfio
+        hostname: vfio 
+        image: kthare10/vfio:latest
+        restart: always
+        privileged: true
+        cap_add:
+            - ALL
+        # point to user specific keys below
+        volumes:
+        - /dev:/dev 
+        - /sys:/sys 
+        - /lib/modules:/lib/modules 
+        - /var/lib/kubelet/device-plugins:/var/lib/kubelet/device-plugins

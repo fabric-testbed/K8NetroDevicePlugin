@@ -21,8 +21,6 @@ docker build -t netronome-device-plugin-vfio:latest .
 
 ## Running
 
-NOTE: This process is not finalized yet.
-
 ## As a DaemonSet
 
 ```

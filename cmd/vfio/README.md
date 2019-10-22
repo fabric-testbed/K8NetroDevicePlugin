@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This software is a kubernetes [device plugin](https://kubernetes.io/docs/concepts/cluster-administration/device-plugins/) that exposes PCI devices from the underlying system and makes them available as resources for the kubernetes node.
+This software is a kubernetes [device plugin](https://kubernetes.io/docs/concepts/cluster-administration/device-plugins/) that exposes Netronome PCI devices from the underlying system and makes them available as resources for the kubernetes node.
 
 ## Building
 
@@ -20,8 +20,6 @@ docker build -t netronome-device-plugin-vfio:latest .
 ```
 
 ## Running
-
-NOTE: This process is not finalized yet.
 
 ## As a DaemonSet
 
